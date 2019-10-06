@@ -1,7 +1,7 @@
 from math import radians, cos, sin, asin, sqrt
 
 
-def cal_distance_meter(lng1, lat1, lng2, lat2):
+def cal_distance_meter(lat1, lng1, lat2, lng2):
     lng1, lat1, lng2, lat2 = map(radians, [lng1, lat1, lng2, lat2])
     d_lon = lng2-lng1
     d_lat = lat2-lat1
@@ -11,4 +11,4 @@ def cal_distance_meter(lng1, lat1, lng2, lat2):
 
 
 if __name__ == '__main__':
-    print(cal_distance_meter(116, 39, 116, 40))
+    print(cal_distance_meter(39, 116, 40, 116))
