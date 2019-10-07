@@ -1,5 +1,6 @@
 # HOW TO USE IT
 ------
+## You need this things:
 ### data directory
 need a dir at this root_dir named as 'data'
   all prior data here
