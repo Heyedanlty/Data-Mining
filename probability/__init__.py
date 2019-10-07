@@ -85,34 +85,6 @@ def get_normal_matrix(data_matrix):
             normal_matrix[i][j].append(std)
     return normal_matrix
 
-def get_poison_probability(lam, k):
-    factorial_list = get_fact_list()
-    sum = 0
-    for i in range(0, k):
-        sum += lam**k * math.exp(-k) / get_fact(k)
-    return 1 - sum
-
-def get_fact(n, faclist):
-    if n >= len(faclist):
-        return factorial(n)
-    else:
-        return faclist[n]
-
-def get_fact_list():
-    fact_list = [1]
-    for i in range(1,300):
-        fact_list.append(fact_list[i-1]*i)
-    return fact_list
-
-def factorial(n):
-    if n == 0 or n == 1:
-        return 1
-    else:
-        fac = 1
-        for i in range(2, n + 1):
-            fac *= i
-        return fac
-
 def get_class_list():
     _list_ = np.loadtxt(r'./class_list.txt', delimiter = ',')
     return _list_
@@ -141,5 +113,5 @@ def train_current_probability_model():
 
 if __name__ == '__main__':
 
-    #train_prior_probability_model()
+    train_prior_probability_model()
     train_current_probability_model()
